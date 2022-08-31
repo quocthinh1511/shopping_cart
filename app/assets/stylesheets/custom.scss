@@ -364,4 +364,15 @@ color: rgb(243, 211, 98)!important;
     border: 0;
     }
     }
- 
+    .dropdown-menu{
+        background-image: url(https://bigdata-vn.com/wp-content/uploads/2021/09/1632996434_764_Hinh-nen-xanh-duong-dep.jpg);
+        background-position: center;
+        background-size: 100%;
+        color:white !important;
+    }
+    .dropdown-item{
+        color:white !important;
+    }
+    .dropdown-item:hover{
+        background-color: rgb(57, 85, 226)!important;
+    }
