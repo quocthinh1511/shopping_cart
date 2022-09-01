@@ -66,30 +66,8 @@ color:rgb(247, 198, 64)!important;
     background-image: url( https://anhdephd.vn/wp-content/uploads/2022/05/background-trang-xanh-dep.jpg); 
 }
 
-/* footer */
-footer {
-    margin-top: 45px;
-    padding-top: 5px;
-    border-top: 1px solid #eaeaea;
-    color: #777;
-    }
-    footer a {
-    color: #555;
-    }
-    footer a:hover {
-    color: #222;
-    }
-    footer small {
-    float: left;
-    }
-    footer ul {
-    float: right;
-    list-style: none;
-    }
-    footer ul li {
-    float: left;
-    margin-left: 15px;
-    }
+
+
     @mixin box_sizing {
         -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
@@ -131,6 +109,10 @@ aside {
     .gravatar {
     float: left;
     margin-right: 10px;
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+  
     }
     .gravatar_edit {
     margin-top: 15px;
@@ -376,3 +358,22 @@ color: rgb(243, 211, 98)!important;
     .dropdown-item:hover{
         background-color: rgb(57, 85, 226)!important;
     }
+    .userr { 
+        font-size: 25px;
+        line-height: 100px;
+        font-family: Cursive;
+    }
+ /*footer */ 
+.inline {
+    display:inline-block!important;
+    float: left;
+}
+footer {
+    margin-top: 50px!important;
+  font-size: 15px!important;
+  font-family:Arial, Helvetica, sans-serif!important;
+}
+.text-muted{
+    font-family:Arial, Helvetica, sans-serif!important;
+    font-size: 15px!important;
+}
