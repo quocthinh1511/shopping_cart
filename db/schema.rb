@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_31_130052) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_02_043620) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,44 +20,62 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_130052) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "oder_items", force: :cascade do |t|
+  create_table "microposts", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_microposts_on_user_id"
   end
 
-  create_table "oders", force: :cascade do |t|
+  create_table "order_items", force: :cascade do |t|
+    t.bigint "products_id"
+    t.bigint "orders_id"
+    t.integer "quantity"
+    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["orders_id"], name: "index_order_items_on_orders_id"
+    t.index ["products_id"], name: "index_order_items_on_products_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.bigint "users_id"
+    t.integer "sum"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["users_id"], name: "index_orders_on_users_id"
   end
 
   create_table "product_categories", force: :cascade do |t|
-    t.bigint "product_id"
+    t.bigint "products_id"
     t.bigint "categories_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["categories_id"], name: "index_product_categories_on_categories_id"
-    t.index ["product_id"], name: "index_product_categories_on_product_id"
+    t.index ["products_id"], name: "index_product_categories_on_products_id"
   end
 
   create_table "products", force: :cascade do |t|
-    t.bigint "shop_id"
+    t.bigint "shops_id"
+    t.string "author"
     t.string "name"
-    t.string "color"
-    t.string "size"
     t.string "price"
     t.integer "quantity"
     t.text "description"
-    t.bigint "categories_id"
+    t.text "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["categories_id"], name: "index_products_on_categories_id"
-    t.index ["shop_id"], name: "index_products_on_shop_id"
+    t.index ["shops_id"], name: "index_products_on_shops_id"
   end
 
   create_table "shops", force: :cascade do |t|
     t.string "name"
     t.bigint "user_id"
     t.string "description"
+    t.string "phone"
+    t.string "tax_code"
     t.string "avatar"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -70,12 +88,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_130052) do
     t.string "password"
     t.string "phone"
     t.string "address"
-    t.integer "role"
+    t.integer "role", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.string "remember_digest"
+    t.boolean "admin"
+    t.string "activation_digest"
+    t.boolean "activated"
+    t.datetime "activated_at"
+    t.string "reset_digest"
+    t.datetime "reset_sent_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "microposts", "users"
 end

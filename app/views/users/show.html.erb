@@ -1,18 +1,29 @@
 <% provide(:title, @user.name) %>
 
 <div class="row">
-
 <div>
-<h1> User Information </h1>
+<h1><i class="uil uil-comment-info"></i> User Information </h1>
 <%= gravatar_for @user %>
 <div class = 'userr'>
-<div> Name :<%= @user.name %> </div>
-<div> Email :<%= @user.email %> </div>
-<div> Phone :<%= @user.phone %> </div>
-<div> Address :<%= @user.address %> </div>
+<div> <i class="uil uil-user"></i>
+Name :<%= @user.name %> </div>
+<div><i class="uil uil-envelope-edit"></i> 
+Email :<%= @user.email %> </div>
+<div> <i class="uil uil-phone"></i>
+Phone :<%= @user.phone %> </div>
+<div><i class="uil uil-map-pin"></i>
+ Address :<%= @user.address %> </div>
 </div>
 </div>
 </h1>
-
+<div class="col-md-8">
+ <% if @user.microposts.any? %> 
+<h3>Microposts (<%= @user.microposts.count %>)</h3>
+<ol class="microposts">
+<%= render @microposts %>
+</ol>
+<%= will_paginate @microposts %>
+<% end %>
+</div>
 
 
