@@ -1,52 +1,47 @@
 class ProductsController < ApplicationController    
     def index
-        
+        @products = Product.paginate(page: params[:page])
     end
 
     def show 
-        @product = Pruduct.find_by(id: params[:id])
+        @product = Product.find_by(id: params[:id])
     end
 
     def new
         @product = Product.new
     end
-
+    def destroy
+        Product.find(params[:id]).destroy
+        flash[:success] = "Product deleted"
+        redirect_to products_url
+    end
     def create
-        @product = Product.new(product_params)
-        @shop = Shop.find_by(id: session[:user_id])
-
-        @product.user_id = shop[:id]
-        
+        @product = current_shop.products.build(product_params)
         if @product.save
-            
             flash[:success] = 'Your product has been created'
-            redirect_to root_path 
+            redirect_to @product
         else
             flash[:warning] = "Cannot create product!!"
-            render 'pruduct/new'
+            render 'products/new'
         end
     end
 
     def edit
-        @shop = Shop.find_by(id: params[:id]) 
+        
     end
 
     def update
-        @shop = Shop.find_by(id: params[:id])
-        if @shop.update(shop_params)
+      #  @shop = Shop.find_by(id: params[:id])
+     #   if @shop.update(shop_params)
             # Handle a successful update.
-            redirect_to @shop
-        else
-            render 'edit'
-        end
+         #   redirect_to @shop
+       # else
+          #  render 'procduct/show'
+        #end
     end
     
-    def destroy
-        
-    end
-   
     private
         def product_params
-            params.require(:shop).permit(:name, :description, :image, :quantity ,:price,:author)
+            params.require(:product).permit(:name, :description, :image, :quantity ,:price,:author)
         end
 end

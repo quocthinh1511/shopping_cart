@@ -15,6 +15,10 @@ module SessionsHelper
         end
         end
     end
+    def current_shop
+        @user = User.find_by(id: session[:user_id])
+        @user.shop
+    end
     def logged_in?
         !current_user.nil?
     end
