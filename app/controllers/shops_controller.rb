@@ -1,7 +1,4 @@
 class ShopsController < ApplicationController    
-    def index
-        
-    end
 
     def show 
         @shop = Shop.find_by(id: params[:id])
@@ -12,14 +9,12 @@ class ShopsController < ApplicationController
     end
 
     def create
-        @shop = Shop.new(shop_params)
+        @shop = Shop.new(shop_params) 
         @user = User.find_by(id: session[:user_id])
-
         @shop.user_id = session[:user_id]
-        
         if @shop.save
             @user.update_attribute(:role, 2)
-            
+
             flash[:success] = 'Create shop successfully!'
             redirect_to root_path 
         else

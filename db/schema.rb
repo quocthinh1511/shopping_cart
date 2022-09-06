@@ -49,25 +49,25 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_02_043620) do
   end
 
   create_table "product_categories", force: :cascade do |t|
-    t.bigint "products_id"
-    t.bigint "categories_id"
+    t.bigint "product_id"
+    t.bigint "categorie_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["categories_id"], name: "index_product_categories_on_categories_id"
-    t.index ["products_id"], name: "index_product_categories_on_products_id"
+    t.index ["categorie_id"], name: "index_product_categories_on_categorie_id"
+    t.index ["product_id"], name: "index_product_categories_on_product_id"
   end
 
   create_table "products", force: :cascade do |t|
-    t.bigint "shops_id"
+    t.bigint "shop_id"
     t.string "author"
     t.string "name"
     t.string "price"
     t.integer "quantity"
-    t.text "description"
-    t.text "image"
+    t.string "description"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["shops_id"], name: "index_products_on_shops_id"
+    t.index ["shop_id"], name: "index_products_on_shop_id"
   end
 
   create_table "shops", force: :cascade do |t|
