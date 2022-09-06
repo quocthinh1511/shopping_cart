@@ -1,0 +1,15 @@
+<% provide(:title, 'Sign up') %>
+<h1 class='margintop'>Sign up for your Store</h1>
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+<%= form_with(model: @shop, local: true) do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name, class: 'form-control' %>
+<%= f.label :description %>
+<%= f.text_field :desciption, class: 'form-control' %>
+<%= f.label :avatar %>
+<%= f.text_field :avatar, class: 'form-control' %>
+<%= f.submit "Create My Store",class: "btn btn-primary" %>
+<% end %>
+</div>
+</div>

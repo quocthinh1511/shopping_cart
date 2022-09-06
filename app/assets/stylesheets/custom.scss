@@ -1,8 +1,18 @@
-
+* { 
+    padding: 0;
+    margin: 0; 
+    box-sizing : border-box ;
+}
+html {
+    height: 100%;
+}
 body {
     padding-top: 0px;
-    background-image: url(https://pkmacbook.com/wp-content/uploads/2021/06/background-powerpoint-xanh-trang_060333380.jpg)!important;
+     background-image: url(https://pkmacbook.com/wp-content/uploads/2021/06/background-powerpoint-xanh-trang_060333380.jpg)!important; 
     background-size:100% !important;
+    height: 100%;
+    margin: 0;
+    margin:0px;
     }
     section {
     overflow: auto;
@@ -160,7 +170,7 @@ aside {
     color:rgb(0, 104, 231)!important;
 }
 .margintop{
-    margin-top: 40px;
+    margin-top: 40px!important;
 }
 .form-control{
     margin-top: 10px;
@@ -289,6 +299,26 @@ color: rgb(243, 211, 98)!important;
     font-weight: 700;
    
 }
+.textneww { 
+    font-size: 40px;
+    background: url(https://i.pinimg.com/550x/4b/03/05/4b0305101344cf7c77b1cae9c16b2801.jpg);
+    -webkit-background-clip: text;
+    color:transparent;
+    background-position: center;
+    background-size: 100%;
+    font-weight: 700;
+   
+}
+.textnewww { 
+    font-size: 40px;
+    background: url(https://png.pngtree.com/thumb_back/fw800/background/20200606/pngtree-ice-and-fire-blending-impact-background-image_338012.jpg);
+    -webkit-background-clip: text;
+    color:transparent;
+    background-position: center;
+    background-size: 100%;
+    font-weight: 700;
+   
+}
 .carousel-control-prev,.carousel-control-next {
     color:#000!important;
 }
@@ -377,3 +407,116 @@ footer {
     font-family:Arial, Helvetica, sans-serif!important;
     font-size: 15px!important;
 }
+/* micropost */ 
+.microposts {
+    list-style: none;
+    padding: 0;
+    li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+    }
+    .user {
+    margin-top: 5em;
+    padding-top: 0;
+    }
+    .content {
+    display: block;
+    margin-left: 60px;
+    img {
+    display: block;
+    padding: 5px 0;
+    }
+    }
+    .timestamp {
+    color:gray;
+    display: block;
+    margin-left: 60px;
+    }
+    .gravatar {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+    }
+    }
+    aside {
+    textarea {
+    height: 100px;
+    margin-bottom: 5px;
+    }
+    }
+    span.image {
+    margin-top: 10px;
+    input {
+    border: 0;
+    }
+    }
+    .size {
+        width:150px!important;
+        height:150px;
+    }
+    .margin{
+        margin-top:50px!important;
+        margin-bottom: 50px!important;
+    }
+  
+    .img {
+        display: inline-block;
+    }
+    .bk {
+        background-image: url(https://pkmacbook.com/wp-content/uploads/2021/06/background-powerpoint-xanh-trang_060333380.jpg);
+        background-position: center;  
+    }
+    .bk:hover{
+        background-image: url(https://hinhnen123.com/wp-content/uploads/2021/10/Tong-hop-88-hinh-nen-xanh-duong-cute-dep-tuyet-voi-2.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+    }
+    .bestsell{
+        background-image: url(https://png.pngtree.com/thumb_back/fw800/back_our/20190628/ourmid/pngtree-stage-blue-background-light-star-banner-image_274263.jpg);
+        height:550px!important;
+        width: 100%;
+        background-size: cover;
+        top:0;
+        left:0;
+     
+    }
+    .pic1 {
+        background-image: url(https://cpad.ask.fm/c9e/61294/a238/4c18/8f43/2d2a4ea42f28/original/4588943.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+    }
+    .pic2{
+        background-image: url( https://cpad.ask.fm/c9e/61294/a238/4c18/8f43/2d2a4ea42f28/original/4588943.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+    }
+    .pic3{
+          background-image: url( https://cpad.ask.fm/c9e/61294/a238/4c18/8f43/2d2a4ea42f28/original/4588943.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+    }
+    .accordion-button:hover {
+        background-image: url(https://anhdephd.vn/wp-content/uploads/2022/05/background-trang-xanh-dep.jpg);
+    }
+    .left {
+        float:left!important;
+    }
+    .container{ 
+        padding: 0!important;
+        margin: 0!important;
+    max-width: 100%!important;
+        
+    }
+    .carousel-item{ 
+        width: 90%!important;
+        text-align: center!important;
+        margin-left: 70px!important;
+
+    }
+    .list-group-item{
+   
+    }
