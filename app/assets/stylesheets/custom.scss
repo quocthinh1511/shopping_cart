@@ -386,7 +386,7 @@ color: rgb(243, 211, 98)!important;
         color:white !important;
     }
     .dropdown-item:hover{
-        background-color: rgb(57, 85, 226)!important;
+        background-color: rgb(246, 201, 0)!important;
     }
     .userr { 
         font-size: 25px;
@@ -521,8 +521,8 @@ footer {
    
     }
     .img { 
-        width: 200px!important;
-        height: 200px!important;
+        width: 100%!important;
+        heigt: 100%!important;
         text-align: center;
         margin-bottom: 30px;
     }
@@ -532,4 +532,14 @@ footer {
             width: 400px !important;
             text-align: center !important;
             /* margin-right: 0px!important; */
+    }
+    .cart {
+       font-size: 30px;
+       margin: 0 20px;
+    }
+    .red {
+        background-color: red;
+        border-radius: 10%;
+        text-align: center;
+        color:#fff;
     }

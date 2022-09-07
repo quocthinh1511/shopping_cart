@@ -1,8 +1,10 @@
 class ProductsController < ApplicationController    
     def index
-        @products = Product.paginate(page: params[:page])
+        @products = Product.paginate(page: params[:page]) 
     end
-
+    def search
+        @products = Product.where("name LIKE?", '%' + params[:q]+ '%')
+    end
     def show 
         @product = Product.find_by(id: params[:id])
     end
@@ -39,9 +41,8 @@ class ProductsController < ApplicationController
           #  render 'procduct/show'
         #end
     end
-    
     private
-        def product_params
+        def product_params    
             params.require(:product).permit(:name, :description, :image, :quantity ,:price,:author)
         end
 end
