@@ -28,3 +28,10 @@ users = User.order(:created_at).take(90)
 content = "Hello everyone"
 users.each { |user| user.microposts.create!(content: content) }
 end
+Category.create(name: 'Seft-help')
+Category.create(name: 'Comic Book or Graphic Novel')
+Category.create(name: 'Historical Fiction')
+Category.create(name: 'Classics')
+Category.create(name: 'Literary Fiction')
+Category.create(name: 'Horror')
+

@@ -30,30 +30,30 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_02_043620) do
   end
 
   create_table "order_items", force: :cascade do |t|
-    t.bigint "products_id"
-    t.bigint "orders_id"
+    t.bigint "product_id"
+    t.bigint "order_id"
     t.integer "quantity"
     t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["orders_id"], name: "index_order_items_on_orders_id"
-    t.index ["products_id"], name: "index_order_items_on_products_id"
+    t.index ["order_id"], name: "index_order_items_on_order_id"
+    t.index ["product_id"], name: "index_order_items_on_product_id"
   end
 
   create_table "orders", force: :cascade do |t|
-    t.bigint "users_id"
+    t.bigint "user_id"
     t.integer "sum"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["users_id"], name: "index_orders_on_users_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "product_categories", force: :cascade do |t|
     t.bigint "product_id"
-    t.bigint "categorie_id"
+    t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["categorie_id"], name: "index_product_categories_on_categorie_id"
+    t.index ["category_id"], name: "index_product_categories_on_category_id"
     t.index ["product_id"], name: "index_product_categories_on_product_id"
   end
 
