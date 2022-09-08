@@ -59,6 +59,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_02_043620) do
 
   create_table "products", force: :cascade do |t|
     t.bigint "shop_id"
+    t.bigint "category_id"
     t.string "author"
     t.string "name"
     t.string "price"
@@ -67,6 +68,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_02_043620) do
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["shop_id"], name: "index_products_on_shop_id"
   end
 

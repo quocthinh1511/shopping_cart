@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
         redirect_to products_url
     end
     def create
-        @product = current_shop.products.category.build(product_params)
+        @product = current_shop.products.build(product_params)
         if @product.save
             flash[:success] = 'Your product has been created'
             redirect_to @product
@@ -44,9 +44,9 @@ class ProductsController < ApplicationController
     end
     private
         def product_params    
-            params.require(:product).permit(:name, :description, :image, :quantity ,:price,:author, :category_id)
+            params.require(:product).permit(:name, :description, :image, :quantity ,:price,:author,:category_id)
         end
         def set_categories 
-            @categories = Category.all
+            @category = Category.all.order(:name)
         end
 end

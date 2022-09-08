@@ -1,7 +1,7 @@
 <h1>Search Result</h1>
 <% @products.each do |product| %>
-
-<div class="card" style="width: 18rem;">
+<div class = 'center'>
+<div class="card center" style="width: 18rem;">
   <div class="card-body">
    <%= image_tag(product.image, :alt => "rss feed",class: 'img') %>
     <h5 class="card-title"><%=product.name %> </h5>
@@ -18,5 +18,5 @@
     
   </div>
 </div>
-
+</div>
 <% end %>

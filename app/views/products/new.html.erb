@@ -16,7 +16,7 @@
 <%= f.label :price %>
 <%= f.text_field :price, class: 'form-control' %>
 <%= f.label :category %>
-<%= f.select :category_id,options_for_select(@categories.collect{|cat| [cat.name, cat.id] }) ,class: 'form-control' %>
+<%= f.collection_select :category_id, Category.all, :id, :name, prompt: "Select Category", class: "form-control center" %>
 <%= f.submit "Create My Product",class: "btn btn-primary" %>
 <% end %>
 </div>
