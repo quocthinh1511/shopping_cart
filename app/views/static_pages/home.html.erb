@@ -4,15 +4,14 @@
 <h2>
 Choose your favourite book 
 </h2>
-<h2>  'Let us tenderly and kindly cherish, therefore, the means of knowledge. Let us dare to read, thin
- <% if !logged_in? %><li>
+<h2>  'Let us tenderly and kindly cherish, therefore, the means of knowledge. Let us dare to read, thin' </h2>
 
-<%= link_to "Sign up for convenient use!", signup_path , class: "btn btn-lg btn-primary" %>
-<% end %>
-
- <% if logged_in? %><li>
-  <img src="https://i.pinimg.com/originals/63/c4/40/63c440cb22b9bcf2f614f23df47e352c.gif" class="d-block w-100 center" alt="...">
-
+ <% if logged_in? %>
+ <div>
+  ###
+  </div>
+  <%else%>
+  <%= link_to "Sign up for convenient use!", signup_path , class: "btn btn-lg btn-primary" %>
 <% end %>
 
 <div id="carouselExampleControls" class="carousel slide margintop" data-bs-ride="carousel">
