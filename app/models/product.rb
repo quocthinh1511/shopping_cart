@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
     belongs_to :shop
     has_many :categories , through: :product_category
-    has_many :product_categories    
+    has_many :product_categories  
+    validates :category_id, presence:true
 end
