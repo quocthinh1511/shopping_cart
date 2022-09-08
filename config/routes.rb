@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   post '/shop', to: 'shops#create'
   resources :products
   resources :users
+  resources :categories
   get '/search', to: 'products#search'
 
   resources :account_activations, only: [:edit]

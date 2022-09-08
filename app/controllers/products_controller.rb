@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController    
+    before_action :set_categories
     def index
         @products = Product.paginate(page: params[:page]) 
     end
@@ -43,6 +44,9 @@ class ProductsController < ApplicationController
     end
     private
         def product_params    
-            params.require(:product).permit(:name, :description, :image, :quantity ,:price,:author)
+            params.require(:product).permit(:name, :description, :image, :quantity ,:price,:author,:category_id)
+        end
+        def set_categories 
+            @category = Category.all.order(:name)
         end
 end

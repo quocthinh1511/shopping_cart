@@ -1,6 +1,6 @@
 module ProductsHelper
     def current_product
-        @product = Porduct.find_by(id: shop[:shop_id])
+        @product = Product.find_by(id: shop[:shop_id])
         if (@user && @user.role == 2)
             @user.shop
         else 
@@ -17,5 +17,8 @@ module ProductsHelper
             @current_user = user
         end
         end
+    end
+    def current_category 
+        @current_category = Category.find(params[:id])
     end
 end
