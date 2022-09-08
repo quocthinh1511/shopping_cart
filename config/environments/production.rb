@@ -81,17 +81,18 @@ Rails.application.configure do
   # Use a different logger for distributed setups.
   # require "syslog/logger"
   config.action_mailer.default_url_options = { host: ENV['DOMAIN_URL'] }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-  :user_name => '8bd1d1cc30582a',
-  :password => '3baf26d8eb6684',
-  :address => 'smtp.mailtrap.io',
-  :domain => 'smtp.mailtrap.io',
-  :port => '2525',
-  :authentication => :cram_md5
-}
+  #config.action_mailer.delivery_method = :smtp
+  #config.action_mailer.smtp_settings = {
+  #:user_name => '8bd1d1cc30582a',
+  #:password => '3baf26d8eb6684',
+  #:address => 'smtp.mailtrap.io',
+  #:domain => 'smtp.mailtrap.io',
+ # :port => '2525',
+#  :authentication => :cram_md5
+#}
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new "app-name")
-  if ENV["RAILS_LOG_TO_STDOUT"].present?
+  if ENV["DOMAIN_URL"].present?
+    #if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
