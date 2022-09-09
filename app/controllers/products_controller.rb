@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
     before_action :set_categories
     def index
         @products = Product.paginate(page: params[:page]) 
+        @order_item = current_order.order_items.new
     end
     def search
         @products = Product.where("name LIKE?", '%' + params[:q]+ '%')

@@ -8,12 +8,12 @@ default: &default
 
 development:
   <<: *default
-  database: kk_development
+  database: kkk_development
 
 
 test:
   <<: *default
-  database: kk_test
+  database: kkk_test
  # production:
 #adapter: postgresql
 #encoding: unicode

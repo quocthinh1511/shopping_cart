@@ -20,6 +20,9 @@ body {
     textarea {
     resize: vertical;
     }
+    .clear{ 
+        clear:both !important;
+    }
     .center {
     text-align: center;
     }
@@ -301,7 +304,7 @@ color: rgb(243, 211, 98)!important;
 }
 .textneww { 
     font-size: 40px;
-    background: url(https://i.pinimg.com/550x/4b/03/05/4b0305101344cf7c77b1cae9c16b2801.jpg);
+    background: url(https://hanoispiritofplace.com/wp-content/uploads/2017/11/hinh-nen-powerpoint-cong-nghe-30.jpg);
     -webkit-background-clip: text;
     color:transparent;
     background-position: center;
@@ -398,8 +401,9 @@ color: rgb(243, 211, 98)!important;
     display:inline-block!important;
     float: left;
 }
+
 footer {
-    margin-top: 50px!important;
+    margin-top:100px;
   font-size: 15px!important;
   font-family:Arial, Helvetica, sans-serif!important;
 }
@@ -463,14 +467,14 @@ footer {
         display: inline-block;
     }
     .bk {
-        background-image: url(https://pkmacbook.com/wp-content/uploads/2021/06/background-powerpoint-xanh-trang_060333380.jpg);
+        background-image: url(http://images.baoninhthuan.com.vn/CMSImage/Resources/Uploaded/hvn82/vu-tru-2.jpg);
         background-position: center;  
     }
     .bk:hover{
-        background-image: url(https://hinhnen123.com/wp-content/uploads/2021/10/Tong-hop-88-hinh-nen-xanh-duong-cute-dep-tuyet-voi-2.jpg);
+        background-image: url(https://png.pngtree.com/background/20210714/original/pngtree-green-galaxy-space-background-picture-image_1204389.jpg);
         background-repeat: no-repeat;
         background-position: center;
-        background-size: 100%;
+        background-size: 100%!important;
     }
     .bestsell{
         background-image: url(https://png.pngtree.com/thumb_back/fw800/back_our/20190628/ourmid/pngtree-stage-blue-background-light-star-banner-image_274263.jpg);
@@ -553,4 +557,33 @@ footer {
 }
 .der{
     text-decoration: none;
+}
+
+.backk {
+    background-image: url(https://pdp.edu.vn/wp-content/uploads/2021/02/tai-background-anh-sang-dep-nhat.jpg)!important;
+    background-position: center!important;
+    background-repeat: no-repeat!important;
+    background-size: cover;
+    padding: 0px !important;
+}
+.backkk{
+    background-image: url(https://scr.vn/wp-content/uploads/2020/08/H%C3%ACnh-n%E1%BB%81n-vector-%C4%91%E1%BA%B9p.jpg)!important;
+    background-position: center!important;
+    background-repeat: no-repeat!important;
+    background-size: cover!important;
+}
+.sizez {
+    font-size: 50px!important;
+}
+.nearfooter{
+    background-image: url(https://hpkhoinguonsangtao.com.vn/wp-content/uploads/2021/04/hinh-nen-mau-tim-dep-chat.jpg)!important;
+    background-position: center!important;
+    background-repeat: no-repeat!important;
+    background-size: 100%!important;
+    clear:both!important;
+    margin-bottom: 0px!important;
+    height: 400px !important;
+}
+.centerr{
+    text-align: center;
 }
