@@ -22,7 +22,9 @@ Rails.application.routes.draw do
   resources :users
   resources :categories
   get '/search', to: 'products#search'
-
+  resources :products
+  resource :cart, only: [:show]
+  resources :order_items, only: [:create, :update, :destroy]
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :microposts, only: [:create, :destroy]
