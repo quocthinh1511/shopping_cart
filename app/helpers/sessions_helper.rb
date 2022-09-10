@@ -1,4 +1,5 @@
 module SessionsHelper
+  
     def log_in(user)
         session[:user_id] = user.id
     end
@@ -40,5 +41,23 @@ module SessionsHelper
     def current_user?(user)
         user && user == current_user
     end
+    def getId(product)
+        $current_product_id = @product.id
+    end
 
+    def current_product
+        @current_product = Product.find($current_product_id);
+    end
+ 
+    def current_category 
+        @current_category = Category.find(params[:id])
+    end
+ 
+    def current_order
+        if !session[:order_id].nil?
+          Order.find(session[:order_id])
+        else
+          Order.new
+        end
+    end
 end

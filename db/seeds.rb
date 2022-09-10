@@ -34,4 +34,8 @@ Category.create(name: 'Historical Fiction')
 Category.create(name: 'Classics')
 Category.create(name: 'Literary Fiction')
 Category.create(name: 'Horror')
-
+OrderStatus.delete_all
+OrderStatus.create! id: 1, name: "In Progress"
+OrderStatus.create! id: 2, name: "Placed"
+OrderStatus.create! id: 3, name: "Shipped"
+OrderStatus.create! id: 4, name: "Cancelled"
