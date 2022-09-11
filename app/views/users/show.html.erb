@@ -1,32 +1,43 @@
 <% provide(:title, @user.name) %>
 <div class ='cennter'>
-<section class="vh-100" style="background-image: url(https://img.pikbest.com/backgrounds/20201123/abstract-background-stage-with-scenic-lights-of-round-futuristic-technology-user-interface-v_5607875jpg!bwr800);">
+
+<section class="vh-100 userback" style="">
   <div class="container py-5 h-100">
+   <%= will_paginate @microposts %>
+  <div class="col-md-8 rightforuser">
+ <% if @user.microposts.any? %> 
+<h3>Microposts (<%= @user.microposts.count %>)</h3>
+<ol class="microposts">
+<%= render @microposts %>
+</ol>
+<%= will_paginate @microposts %>
+<% end %>
     <div class="row d-flex justify-content-center align-items-center h-100 ">
-      <div class="col col-md-9 col-lg-7 col-xl-5">
-        <div class="card" style="border-radius: 15px;">
-          <div class="card-body p-4">
+    
+      <div class="col col-md-9 col-lg-7 col-xl-5 ">
+        <div class = 'backwhite'>
+          <div class="card-body p-4 floatleft ">
             <div class="d-flex text-black">
               <div class="flex-shrink-0">
                 <img src="https://scontent.fsgn2-4.fna.fbcdn.net/v/t39.30808-6/300822714_1153271978736545_1088646969732223615_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=6oRZvbc5IjgAX9avoRY&tn=dKo5jpKF-52URWfV&_nc_ht=scontent.fsgn2-4.fna&oh=00_AT-cS9KNlPfCwLeaDYb666RqlG6BYh3BWZGZ89LGrzj1xw&oe=631E5A39"
                   alt="Generic placeholder image" class="img-fluid"
                   style="width: 180px; border-radius: 10px;">
               </div>
-              <div class="flex-grow-1 ms-3 ">
+              <div class="flex-grow-1 ms-3 white ">
                 <h5 class="mb-1"><%= @user.name %></h5>
                 <h5 class="mb-1"><%= @user.email %> </h5>
                  <h5 class="mb-1"><%= @user.phone %></h5>
                   <h5 class="mb-1"><%= @user.address %> </h5>
-                <p class="mb-2 pb-1" style="color: #2b2a2a;">Senior Journalist</p>
-                <div class="d-flex justify-content-start rounded-3 p-2 mb-2"
+                <p class="mb-2 pb-1 white" style="color: #2b2a2a;">Senior Journalist</p>
+                <div class="d-flex justify-content-start rounded-3 p-2 mb-2 black"
                   style="background-color: #efefef;">
                   <div>
                     <p class="small text-muted mb-1">Articles</p>
-                    <p class="mb-0">41</p>
+                    <p class="mb-0">40</p>
                   </div>
                   <div class="px-3">
                     <p class="small text-muted mb-1">Followers</p>
-                    <p class="mb-0">976</p>
+                    <p class="mb-0">1B</p>
                   </div>
                   <div>
                     <p class="small text-muted mb-1">Rating</p>
@@ -44,16 +55,11 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="col-md-8">
- <% if @user.microposts.any? %> 
-<h3>Microposts (<%= @user.microposts.count %>)</h3>
-<ol class="microposts">
-<%= render @microposts %>
-</ol>
-<%= will_paginate @microposts %>
-<% end %>
+
+   
 </div>
+  </div>
+  
 </section>
 </div>
 

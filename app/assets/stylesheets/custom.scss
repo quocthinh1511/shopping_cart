@@ -310,12 +310,17 @@ color: rgb(243, 211, 98)!important;
     background-position: center;
     background-size: 100%;
     font-weight: 700;
+    margin-top: 30px!important;
 }
 .portfolio{
     text-align: center!important;
-    background-image: url(https://img.thuthuatphanmem.vn/uploads/2018/10/20/galaxy-wallpaper-hd_104250697.jpg);
+    background-image: url(https://hanoispiritofplace.com/wp-content/uploads/2017/12/hinh-nen-may-tinh-4k-185.jpg);
     background-position: center;
     background-size: 100%;
+    
+}
+.justify-content-center{
+    width: 100%!important;
 }
 .resizee:hover {
     border-radius:0;
@@ -554,7 +559,7 @@ figure.snip0016:hover figcaption::before {
 }
 
 footer {
-    margin-top:100px;
+  
   font-size: 15px!important;
   font-family:Arial, Helvetica, sans-serif!important;
 }
@@ -618,11 +623,14 @@ footer {
         display: inline-block;
     }
     .bk {
-        background-image: url(http://images.baoninhthuan.com.vn/CMSImage/Resources/Uploaded/hvn82/vu-tru-2.jpg);
+        background-image: url(https://phunugioi.com/wp-content/uploads/2020/10/anh-nen-bau-troi-dem-4k-cho-iphone.jpg);
         background-position: center;  
+        background-size: 100%;
+        color: white!important;
     }
+  
     .bk:hover{
-        background-image: url(https://png.pngtree.com/background/20210714/original/pngtree-green-galaxy-space-background-picture-image_1204389.jpg);
+        background-image: url(https://topshare.vn/wp-content/uploads/2021/01/Hinh-nen-dien-thoai-chat-Full-HD-doc-la-va-doc-dao-7.jpg);
         background-repeat: no-repeat;
         background-position: center;
         background-size: 100%!important;
@@ -727,7 +735,7 @@ footer {
     font-size: 50px!important;
 }
 .nearfooter{
-    background-image: url(https://hpkhoinguonsangtao.com.vn/wp-content/uploads/2021/04/hinh-nen-mau-tim-dep-chat.jpg)!important;
+    background-image: url(https://allimages.sgp1.digitaloceanspaces.com/tipeduvn/2022/06/50-Hinh-nen-bau-troi-dem-day-sao-dep-lung.jpg)!important;
     background-position: center!important;
     background-repeat: no-repeat!important;
     background-size: 100%!important;
@@ -742,4 +750,35 @@ footer {
 width : 300px!important;
 height: 300px!important;
 overflow: hidden;
+}
+.insize{
+    
+    width: 400px!important;
+}
+.imgsize{
+    width: 200px;
+    height: 200px;
+}
+.userback {
+    background-image: url(https://haycafe.vn/wp-content/uploads/2021/12/Hinh-nen-may-tinh-an-tuong-nhat.jpg);
+    background-size: 100%;
+    background-position: center;
+    color:white;
+    position: relative!important;
+}
+.floatleft{
+    right: 1200px!important;
+    top:100px;
+    position: absolute!important;
+}
+.rightforuser{
+    right: 0!important;
+    position: absolute!important;
+}
+.black { 
+    color:black!important;
+}
+.backwhite{
+    background-color: white!important;
+    border-radius: 0.6!important;
 }
