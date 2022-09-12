@@ -6,8 +6,14 @@ class UsersController < ApplicationController
         @user = User.new
     end
     def show
+        if logged_in?
+            @micropost = current_user.microposts.build
+            @feed_items = current_user.feed.paginate(page: params[:page])
+        end 
         @user = User.find(params[:id])
         @microposts = @user.microposts.paginate(page: params[:page])
+        redirect_to root_url and return unless true
+     
     end
     def create
         @user = User.new(user_params) # Not the final implementation!
@@ -42,7 +48,7 @@ class UsersController < ApplicationController
      return @user
    end
     def index
-        @users = User.paginate(page: params[:page])
+        @users = User.where(activated: true).paginate(page: params[:page])
     end
   
     private

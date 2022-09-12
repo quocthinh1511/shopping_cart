@@ -16,14 +16,15 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+  get '/confirm', to: 'sessions#confirm'
   get '/bookpage', to: 'sessions#bookpage'
   post '/shop', to: 'shops#create'
   resources :products
   resources :users
   resources :categories
+
   get '/buy',to: 'cart#show'
   get '/search', to: 'products#search'
-  resources :products
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
   resources :account_activations, only: [:edit]
