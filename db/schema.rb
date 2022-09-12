@@ -33,7 +33,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_09_071344) do
     t.bigint "product_id"
     t.bigint "order_id"
     t.integer "quantity"
-    t.integer "price"
     t.integer "total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

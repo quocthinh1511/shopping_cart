@@ -1,7 +1,7 @@
 <% provide(:title, @user.name) %>
 <div class ='cennter'>
-
 <section class="vh-100 userback" style="">
+<h1>Profile</h1>
   <div class="container py-5 h-100">
    <%= will_paginate @microposts %>
   <div class="col-md-8 rightforuser">
@@ -12,8 +12,8 @@
 </ol>
 <%= will_paginate @microposts %>
 <% end %>
+
     <div class="row d-flex justify-content-center align-items-center h-100 ">
-    
       <div class="col col-md-9 col-lg-7 col-xl-5 ">
         <div class = 'backwhite'>
           <div class="card-body p-4 floatleft ">
@@ -45,15 +45,26 @@
                    
                   </div>
                 </div>
+                <div class="row">
+
                 <div class="d-flex pt-1">
-                  <button type="button" class="btn btn-outline-primary me-1 flex-grow-1">Chat</button>
-                  <button type="button" class="btn btn-primary flex-grow-1">Follow</button>
+                  <button type="button" class="btn btn-outline-primary me-1 flex-grow-1 userbut">Chat</button>
+                  <button type="button" class="btn flex-grow-1 userbut">Follow</button>
                 </div>
               </div>
             </div>
+            
           </div>
+          <aside class="col-md-4">
+<section class="micropost_form upload">
+<%= render 'shared/micropost_form' %>
+</section>
+</div>
+</aside>
         </div>
-      </div>
+        
+      </div>  
+</div>
     </div>
 
    
