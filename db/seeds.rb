@@ -13,7 +13,7 @@ admin: true,activated: true,
 activated_at: Time.zone.now,
 role: 1) 
 # Generate a bunch of additional users.
-99.times do |n|
+5.times do |n|
 name = "Others"
 email = "example-#{n+1}@railstutorial.org"
 password = "password"

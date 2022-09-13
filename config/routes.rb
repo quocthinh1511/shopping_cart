@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   resources :products
   resources :users
   resources :categories
-
+  get '/shoppage', to: 'products#index_shop'
   get '/buy',to: 'cart#show'
   get '/search', to: 'products#search'
   resource :cart, only: [:show]

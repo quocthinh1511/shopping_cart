@@ -1,8 +1,13 @@
 class ProductsController < ApplicationController    
     before_action :set_categories
+    before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
     def index
         @products = Product.paginate(page: params[:page]) 
         @order_item = current_order.order_items.new
+        @shops = Shop.all
+    end
+    def index_shop    
+        @products = current_shop.products
     end
     def search
         @products = Product.where("name LIKE?", '%' + params[:q]+ '%')
@@ -10,14 +15,13 @@ class ProductsController < ApplicationController
     def show 
         @product = Product.find_by(id: params[:id])
     end
-
     def new
         @product = Product.new
     end
     def destroy
         Product.find(params[:id]).destroy
         flash[:success] = "Product deleted"
-        redirect_to products_url
+        redirect_to shoppage_path
     end
     def create
         @product = current_shop.products.build(product_params)
@@ -31,17 +35,16 @@ class ProductsController < ApplicationController
     end
 
     def edit
-        
+        @product = Product.find(params[:id])
     end
-
     def update
-      #  @shop = Shop.find_by(id: params[:id])
-     #   if @shop.update(shop_params)
+        @product = Product.find_by(id: params[:id])
+        if @product.update(product_params)
             # Handle a successful update.
-         #   redirect_to @shop
-       # else
-          #  render 'procduct/show'
-        #end
+           redirect_to shoppage_path
+        else
+            render 'procduct/show'
+        end
     end
     private
         def product_params    
@@ -50,4 +53,10 @@ class ProductsController < ApplicationController
         def set_categories 
             @category = Category.all.order(:name)
         end
+        def logged_in_user
+            unless logged_in?
+            flash[:danger] = "Please log in."
+            redirect_to login_url
+            end
+        end 
 end

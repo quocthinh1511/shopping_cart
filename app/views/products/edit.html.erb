@@ -1,0 +1,22 @@
+<% provide(:title, 'Edit product') %>
+
+<h1 class='margintop'>Edit your product</h1>
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+<%= form_with(model: @product, local:true ) do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name, class: 'form-control' %>
+<%= f.label :author %>
+<%= f.text_field :author, class: 'form-control' %>
+<%= f.label :description %>
+<%= f.text_field :description, class: 'form-control' %>
+<%= f.label :quantity %>
+<%= f.text_field :quantity, class: 'form-control' %>
+<%= f.label :price %>
+<%= f.text_field :price, class: 'form-control' %>
+<%= f.label :image %>
+<%= f.file_field :image, class: 'form-control' %>
+<%= f.submit "Confirm",class: "btn btn-primary" %>
+<% end %>
+</div>
+</div>

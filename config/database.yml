@@ -8,12 +8,12 @@ default: &default
 
 development:
   <<: *default
-  database: tv_development
+  database: tz_development
 
 
 test:
   <<: *default
-  database: tv_test
+  database: tz_test
  # production:
 #adapter: postgresql
 #encoding: unicode

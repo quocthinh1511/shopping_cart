@@ -2,7 +2,7 @@
 <h1>Update your Shop's information </h1>
 <div class="row">
 <div class="col-md-6 col-md-offset-3">
-<%= form_with(model: @shop,  method: :put) do |f| %>
+<%= form_with(model: @shop,  local:true) do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name, class: 'form-control', placeholder: "Enter your new name shop"  %>
 <%= f.label :description%>
@@ -12,7 +12,7 @@
 <%= f.label :tax_code%>
 <%= f.text_field :tax_code, class: 'form-control',placeholder: "Tax code?"  %>
 <%= f.label :avatar %>
-<%= f.text_field :avatar, class: 'form-control',placeholder: "Add a link" %> 
+<%= f.file_field :avatar, class: 'form-control',placeholder: "Add a link" %> 
 <%= f.submit "Save changes", class: "btn btn-primary" %>
 <% end %>
 </div>

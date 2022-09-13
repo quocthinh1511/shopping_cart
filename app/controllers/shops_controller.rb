@@ -8,7 +8,7 @@ class ShopsController < ApplicationController
         @shop = Shop.new
     end 
     def index
-      
+      @shops = Shop.all
     end
 
     def create
@@ -46,6 +46,6 @@ class ShopsController < ApplicationController
    
     private
         def shop_params
-            params.require(:shop).permit(:name, :description, :avatar, :phone ,:tax_code)
+            params.require(:shop).permit(:name, :description, :avatar, :phone ,:tax_code, :avatar)
         end
 end

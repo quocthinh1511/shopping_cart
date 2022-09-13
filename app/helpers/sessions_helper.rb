@@ -52,7 +52,6 @@ module SessionsHelper
     def current_category 
         @current_category = Category.find(params[:id])
     end
- 
     def current_order
         if !session[:order_id].nil?
           Order.find(session[:order_id])

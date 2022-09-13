@@ -12,10 +12,7 @@ class User < ApplicationRecord
     uniqueness: { case_sensitive: false }
     has_secure_password
     validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
-     
-    
-   
-    
+    mount_uploader :avatar, ImageUploader
     def User.digest(string)
         cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
         BCrypt::Engine.cost
@@ -23,15 +20,17 @@ class User < ApplicationRecord
         BCrypt::Password.create(string, cost: cost)
     end
     def activate
-            update_columns(activated: true, activate_at: Time.zone.now)
+            update_columns(activated: true)
     end
     def send_activation_email
         UserMailer.account_activation(self).deliver_now
     end
-    def authenticated?(remember_token)
-        return false if remember_digest.nil?
-        BCrypt::Password.new(remember_digest).is_password?(remember_token)
+    def authenticated?(attribute, token)
+        digest = send("#{attribute}_digest")
+        return false if digest.nil?
+        BCrypt::Password.new(digest).is_password?(token)
     end
+        
   
     def User.new_token
         SecureRandom.urlsafe_base64
