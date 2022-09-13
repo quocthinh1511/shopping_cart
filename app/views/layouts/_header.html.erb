@@ -30,7 +30,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
            <li><%= link_to "Edit information", edit_shop_path(current_user.shop) ,class:'dropdown-item ' %></li>
          <li><%= link_to "Add product", new_product_path ,class:'dropdown-item ' %></li>
-          <li><%= link_to "All your product", '#',class:'dropdown-item ' %></li>
+          <li><%= link_to "All your product", shoppage_path,class:'dropdown-item ' %></li>
           </ul>
         </li>
             <% end %>
@@ -61,7 +61,4 @@
       <%= link_to buy_path do %>
   <i class="uil uil-shopping-cart-alt cart"></i> 
     <% end %>
-     
-      
-       
 </nav>
