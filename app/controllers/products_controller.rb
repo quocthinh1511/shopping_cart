@@ -6,23 +6,34 @@ class ProductsController < ApplicationController
         @order_item = current_order.order_items.new
         @shops = Shop.all
     end
+
     def index_shop    
         @products = current_shop.products
     end
+
     def search
         @products = Product.where("name LIKE?", '%' + params[:q]+ '%')
     end
+
     def show 
         @product = Product.find_by(id: params[:id])
     end
+
+    def showtocart 
+        @product = Product.find_by(id: params[:id])
+        @order_item = current_order.order_items.new
+    end
+
     def new
         @product = Product.new
     end
+
     def destroy
         Product.find(params[:id]).destroy
         flash[:success] = "Product deleted"
         redirect_to shoppage_path
     end
+
     def create
         @product = current_shop.products.build(product_params)
         if @product.save
@@ -37,6 +48,7 @@ class ProductsController < ApplicationController
     def edit
         @product = Product.find(params[:id])
     end
+    
     def update
         @product = Product.find_by(id: params[:id])
         if @product.update(product_params)
@@ -46,6 +58,12 @@ class ProductsController < ApplicationController
             render 'procduct/show'
         end
     end
+
+   # def buy
+        #id = params[:id].to_i 
+       # @product = Product.find(params[:id])
+   # end
+
     private
         def product_params    
             params.require(:product).permit(:name, :description, :image, :quantity ,:price,:author,:category_id)
