@@ -91,12 +91,12 @@ Rails.application.configure do
 #  :authentication => :cram_md5
 #}
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new "app-name")
-  if ENV["DOMAIN_URL"].present?
+  #if ENV["DOMAIN_URL"].present?
     #if ENV["RAILS_LOG_TO_STDOUT"].present?
-    logger           = ActiveSupport::Logger.new(STDOUT)
-    logger.formatter = config.log_formatter
-    config.logger    = ActiveSupport::TaggedLogging.new(logger)
-  end
+    #logger           = ActiveSupport::Logger.new(STDOUT)
+   # logger.formatter = config.log_formatter
+    #config.logger    = ActiveSupport::TaggedLogging.new(logger)
+ # end
 
   # Do not dump schema after migrations.
 
