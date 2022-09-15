@@ -10,7 +10,6 @@ class ProductsController < ApplicationController
     def index_shop    
         @products = current_shop.products
     end
-
     def search
         @products = Product.where("name LIKE?", '%' + params[:q]+ '%')
     end
