@@ -3,7 +3,7 @@
 <div class = 'center'>
 <div class="card center" style="width: 18rem;">
   <div class="card-body">
-   <%= image_tag(product.image, :alt => "rss feed",class: 'img') %>
+   <%= image_tag(product.image.url, :alt => "rss feed",class: 'img') %>
     <h5 class="card-title"><%=product.name %> </h5>
     <p class ='card-title'> <%=product.author %> </p>
      <p class="card-text"><%=product.description %> </p>

@@ -1,18 +1,24 @@
-<% if !@order_item.nil? && @order_item.errors.any? %>
-  <div class="alert alert-danger">
-    <ul>
-    <% @order_item.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+<h1>Cards#show</h1>
+<p>Find me in app/views/cards/show.html.erb</p>
+
+
+
+<% @order_items.each do |item| %>
+
+    <h3><%= item.product.name %></h3>
+    <h5><%= item.product.price %></h5>
+
+
+    <%= form_for item, remote: true do |f| %>
+        <%= f.hidden_field :product_id, :value => item.product.id %>
+        <%= f.number_field :quantity, :value => item.quantity.to_i %>
+        <%= f.submit "Update Card "%>
+        <%= link_to "Remove Items", order_item_path(item), method: :delete, remote: true%>
     <% end %>
-    </ul>
-  </div>
+    <h2>Subtotal: <%= item.total %></h2>
+
 <% end %>
-<% if @order_items.size == 0 %>
-  <p class="text-center">
-    There are no items in your shopping cart.  Please <%= link_to "go back", root_path %> and add some items to your cart.
-  </p>
-<% else %>
-  <% @order_items.each do |order_item| %>
-    <%= render 'carts/cart_row', product: order_item.product, order_item: order_item, show_total: true %>
-  <% end %>
-<% end %>
+
+
+
+<h3>Your current card value has a subtotal of: <%= current_order.sum %></h3>

@@ -23,11 +23,14 @@ Rails.application.routes.draw do
   resources :users
   resources :categories
   get '/shoppage', to: 'products#index_shop'
-  get '/buy',to: 'cart#show'
   get '/search', to: 'products#search'
-  resource :cart, only: [:show]
-  resources :order_items, only: [:create, :update, :destroy]
+  #get '/showtocart', to: 'products#showtocart'
+  resources :cart, only: [:show]
+  resources :order_items #,only: [:create, :update, :destroy]
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :microposts, only: [:create, :destroy]
+
+  get 'products/:id/showtocart', to: 'products#showtocart', as: 'showtocart'
+  #post 'order_items/:id/create', to: 'order_items#create', as: 'orderitem'
 end

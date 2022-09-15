@@ -22,7 +22,7 @@
     <p class="card-text">Genres :<%=@category.find_by(id: product.category_id).name%></p>
     <p class="card-text">Shop: <%=@shops.find_by(id: product.shop_id).name %> </p>
     <% if product.quantity > 0 %>
-        <%= link_to "Buy it!", product_path(id: product.id) ,class: "btn btn-primary" %>
+        <%= link_to "View", showtocart_path(product),class: "btn btn-primary" %>
     <%else%>
         <div class='soldout'>Sold out!</div>
     <%end%>
