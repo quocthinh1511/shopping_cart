@@ -17,11 +17,16 @@
         <li>
         <%= link_to "Books", products_path ,class:"nav-link white" %></li>
           
-       <% if true %>
-        <li><%= link_to "Users",  users_path, class: 'nav-link white'%></li>
-        <%end%>
         <% if logged_in? %><li>
-         
+                <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Community
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><%= link_to "Users",  users_path, class: 'dropdown-item'%></li>
+         <li><%= link_to "Shopper", shops_path ,class:'dropdown-item ' %></li>
+          </ul>
+        </li>
           <% if create_shop?  %>
                 <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -56,10 +61,12 @@
       <form class="d-flex" action = "/search">
         <input class="form-control me-2" name = "q" type="text" placeholder="Search" aria-label="Search">
       <button class= 'btn btn-outline-success' type='submit' >Search </button>
-      <%= link_to "#{current_order.order_items.size} Items in Cart ( #{number_to_currency current_order.sum} )", cart_path(current_order.order_items), class: "btn btn-link" %>
-
       </form>
-      <%= link_to '#' do %>
-  <i class="uil uil-shopping-cart-alt cart"></i> 
+      <%= link_to  cart_path(current_order.order_items) do %>
+  <i class="uil uil-shopping-cart-alt cart">
+   <% if logged_in? %><li>
+  <span class='orderquantity'>
+     <%= current_order.order_items.size %>
+     </span>  <% end %></i> 
     <% end %>
 </nav>

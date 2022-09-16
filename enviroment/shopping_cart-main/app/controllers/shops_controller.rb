@@ -1,5 +1,5 @@
 class ShopsController < ApplicationController    
-
+    before_action :logged_in_user, only: [:create, :destroy]
     def show 
         @shop = Shop.find_by(id: params[:id])
        # @product= Product.find(params[:id])
@@ -42,7 +42,9 @@ class ShopsController < ApplicationController
     end
     
     def destroy
-        
+        Shop.find(params[:id]).destroy
+        flash[:success] = " Shop deleted"
+        redirect_to shops_url
     end
    
     private

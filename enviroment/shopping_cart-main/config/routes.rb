@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   post '/shop', to: 'shops#create'
   resources :products
   resources :users
+  resources :shops
   resources :categories
   get '/shoppage', to: 'products#index_shop'
   get '/search', to: 'products#search'
