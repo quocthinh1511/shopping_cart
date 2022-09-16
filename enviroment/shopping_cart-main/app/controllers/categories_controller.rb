@@ -7,9 +7,7 @@ class CategoriesController < ApplicationController
       @category = Category.new
   end
 
-  def edit
-      @category = Category.find(params[:id])
-  end
+
 
   def create
       @category = Category.new(category_params)
@@ -20,18 +18,6 @@ class CategoriesController < ApplicationController
       end
   end
 
-  def update
-      @category = Category.find(params[:id])
-      if @category.update_attributes(params[:category].permit!)
-          redirect_to categories_url
-      else
-          render :edit
-      end
-  end
-  def destroy
-      Category.destroy(params[:id])
-      redirect_to categories_url
-  end
 
   private
   # Use callbacks to share common setup or constraints between actions.
