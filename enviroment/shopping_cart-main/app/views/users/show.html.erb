@@ -1,0 +1,75 @@
+<% provide(:title, @user.name) %>
+<div class ='cennter'>
+<section class="vh-100 userback" style="">
+<h1>Profile</h1>
+  <div class="container py-5 h-100">
+   <%= will_paginate @microposts %>
+  <div class="col-md-8 rightforuser">
+ <% if @user.microposts.any? %> 
+<h3>Microposts (<%= @user.microposts.count %>)</h3>
+<ol class="microposts">
+<%= render @microposts %>
+</ol>
+<%= will_paginate @microposts %>
+<% end %>
+
+    <div class="row d-flex justify-content-center align-items-center h-100 ">
+      <div class="col col-md-9 col-lg-7 col-xl-5 ">
+        <div class = 'backwhite'>
+          <div class="card-body p-4 floatleft ">
+            <div class="d-flex text-black">
+              <div class="flex-shrink-0">
+               <%= image_tag(@user.avatar.url, :alt => "rss feed",class: 'img') %>
+              </div>
+              <div class="flex-grow-1 ms-3 white ">
+                <h5 class="mb-1"><%= @user.name %></h5>
+                <h5 class="mb-1"><%= @user.email %> </h5>
+                 <h5 class="mb-1"><%= @user.phone %></h5>
+                  <h5 class="mb-1"><%= @user.address %> </h5>
+                <div class="d-flex justify-content-start rounded-3 p-2 mb-2 black"
+                  style="background-color: #efefef;">
+                  <div>
+                    <p class="small text-muted mb-1">Articles</p>
+                    <p class="mb-0">40</p>
+                  </div>
+                  <div class="px-3">
+                    <p class="small text-muted mb-1">Followers</p>
+                    <p class="mb-0">1B</p>
+                  </div>
+                  <div>
+                    <p class="small text-muted mb-1">Rating</p>
+                    <p class="mb-0">8.5</p>
+                   
+                  </div>
+                </div>
+                <div class="row">
+
+                <div class="d-flex pt-1">
+                  <button type="button" class="btn btn-outline-primary me-1 flex-grow-1 userbut">Chat</button>
+                  <button type="button" class="btn flex-grow-1 userbut">Follow</button>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          <aside class="col-md-4">
+<section class="micropost_form upload">
+<%= render 'shared/micropost_form' %>
+</section>
+</div>
+</aside>
+        </div>
+        
+      </div>  
+</div>
+    </div>
+
+   
+</div>
+  </div>
+  
+</section>
+</div>
+
+
+

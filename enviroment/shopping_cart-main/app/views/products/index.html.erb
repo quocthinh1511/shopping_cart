@@ -1,0 +1,33 @@
+<% provide(:title, 'All products') %>
+<h1>Books</h1>
+<button type="button" class="btn btn-primary">Tất cả</button>
+<button type="button" class="btn btn-primary">Tiểu Thuyết</button>
+<button type="button" class="btn btn-primary">Trinh Thám</button>
+<button type="button" class="btn btn-primary">Tâm lí và giáo dục</button>
+<button type="button" class="btn btn-primary">Truyện tranh</button>
+<button type="button" class="btn btn-primary">Sách khoa học</button>
+<button type="button" class="btn btn-primary">Sách giáo khoa</button>
+<button type="button" class="btn btn-primary">Khác</button>
+<%= will_paginate %>
+<ul class="users">
+<% Product.all.each do |product| %>
+<div class="card editcard" style="width: 18rem;">
+  <div class="card-body">
+   <%= image_tag(product.image.url, :alt => "rss feed",class: 'img') %>
+    <h6 class="card-text"><%=product.name %> </h6>
+    <p class ='card-text'> <%=product.author %> </p>
+     <p class="card-text"><%=product.description %> </p>
+      <p class ='card-text'> Quantity :<%=product.quantity%> </p>
+    <p class="card-text">Price :<%=product.price%></p>
+    <p class="card-text">Genres :<%=@category.find_by(id: product.category_id).name%></p>
+    <p class="card-text">Shop: <%=@shops.find_by(id: product.shop_id).name %> </p>
+    <% if product.quantity > 0 %>
+        <%= link_to "View", showtocart_path(product),class: "btn btn-primary" %>
+    <%else%>
+        <div class='soldout'>Sold out!</div>
+    <%end%>
+  </div>
+</div>
+<% end %>
+</ul>
+<%= will_paginate %>

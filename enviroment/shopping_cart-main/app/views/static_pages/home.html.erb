@@ -1,0 +1,238 @@
+
+<div class="center jumbotron">
+ <span class= 'textnew' >Welcome to our BookStore </span>
+<h2>
+Choose your favourite book 
+</h2>
+<h2>  'Let us tenderly and kindly cherish, therefore, the means of knowledge. Let us dare to read, thin' </h2>
+
+ <% if logged_in? %>
+ <div>
+ <img src="https://i.pinimg.com/originals/1e/3e/37/1e3e3738d81b9db4f6b6505b236a996a.gif" class="imgsize" alt="...">
+  
+  </div>
+  <%else%>
+  <%= link_to "Sign up for convenient use!", signup_path , class: "btn btn-lg btn-primary" %>
+<% end %>
+
+<div id="carouselExampleControls" class="carousel slide margintop" data-bs-ride="carousel">
+  <div class="carousel-inner">
+  
+    <div class="carousel-item active">
+      <img src="https://newshop.vn/public/uploads/options/sachkinhdoanh.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://hbr.edu.vn/public/files/upload/06_2019/images/banner-combo-5c-cho-doanh-nghiep-0911.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://bizweb.dktcdn.net/100/337/637/collections/artboard-1-copy-2.png?v=1574521847603" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+  </div>
+  </div>
+  
+  <div class='bestsell center'>
+ <div class ='margintop'> <span class= 'textnewww ' > Bestseller Books</span> </div>
+<div class= 'marketing'>
+<div class="card" style="width: 18rem;">
+  <img src="https://salt.tikicdn.com/cache/w1200/ts/product/31/8f/94/a206c642f2e887be931f9bd968e1550e.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Không ai qua sông</h5>
+<p class="card-text">Giá xxx.xxxđ</p>
+      <a href="#" class="btn btn-primary">Add to cart</a>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <img src="https://salt.tikicdn.com/cache/w1200/media/catalog/product/b/i/bia-tuyen-tap-kim-lan-1-.u5102.d20170516.t094457.238265.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Tuyển tập Kim Lân</h5>
+    <p class="card-text">Giá xxx.xxxđ</p>
+      <a href="#" class="btn btn-primary">Add to cart</a>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <img src="https://salt.tikicdn.com/cache/w1200/ts/product/af/cd/bc/6c4f3e86282463ace049d07057ed3529.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Thí Nghiệm đầu hàng</h5>
+   <p class="card-text">Giá xxx.xxxđ</p>
+      <a href="#" class="btn btn-primary">Add to cart</a>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <img src="https://salt.tikicdn.com/cache/w1200/ts/product/22/de/b5/5577cf56f8fb486d444d21e7c7226852.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Sống thực tại với be here</h5>
+   <p class="card-text">Giá xxx.xxxđ</p>
+      <a href="#" class="btn btn-primary">Add to cart</a>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <img src="https://salt.tikicdn.com/cache/w1200/ts/product/5b/b7/88/9d68cc0b2b1cf1374bd0843ffa9112c0.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Đọc vị bất kỳ ai khi giao tiếp</h5>
+    <p class="card-text">Giá xxx.xxxđ</p>
+    <a href="#" class="btn btn-primary">Add to cart</a>
+  </div>
+</div>
+</div >
+</div>
+
+
+<section class="page-section portfolio " id="portfolio">
+            <div class="container ">
+                <!-- Portfolio Section Heading-->
+                <span class= 'textne ' > Hot Sale</span>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Grid Items-->
+                <div class="row justify-content-center">
+                    <!-- Portfolio Item 1-->
+                    <div class="col-md-6 col-lg-4 mb-5 insize">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                <figure class="snip0016">
+                                    <img class="img-fluid resizee" src="https://scontent.fsgn2-1.fna.fbcdn.net/v/t1.15752-9/298728661_398623055784967_8126511475772825637_n.png?_nc_cat=107&ccb=1-7&_nc_sid=ae9488&_nc_ohc=jQghWBQWWXkAX_rpIDm&_nc_ht=scontent.fsgn2-1.fna&oh=03_AVIZNdUYqtB3w4KJawCrQ8gwMUleHdyQEKx-_Zafkfn-Cw&oe=63404266" alt="..." />
+                                    <figcaption>
+                                     <h2>I think <span>nighttime</span> is dark</h2>
+                                      <p>So you can imagine your fears with less distraction.</p>
+                                           <a href="#"></a>
+                                      </figcaption>     
+                                    </figure>
+                            </div>
+                                  
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 2-->
+                    <div class="col-md-6 col-lg-4 mb-5 insize">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                <figure class="snip0016">
+                                     <img class="img-fluid  resizee" src="https://scontent.fhan2-2.fna.fbcdn.net/v/t1.15752-9/297890666_839906803687943_1801687503222026126_n.png?_nc_cat=111&ccb=1-7&_nc_sid=ae9488&_nc_ohc=LNy4uWz6Q6AAX8Dx4It&tn=dKo5jpKF-52URWfV&_nc_ht=scontent.fhan2-2.fna&oh=03_AVIOfenKQLK_XHDcO0-0eobnfIFdOC94IVkzFbdJ761eLg&oe=6343C54Ehttps://scontent.fhan2-2.fna.fbcdn.net/v/t1.15752-9/297890666_839906803687943_1801687503222026126_n.png?_nc_cat=111&ccb=1-7&_nc_sid=ae9488&_nc_ohc=LNy4uWz6Q6AAX8Dx4It&tn=dKo5jpKF-52URWfV&_nc_ht=scontent.fhan2-2.fna&oh=03_AVIOfenKQLK_XHDcO0-0eobnfIFdOC94IVkzFbdJ761eLg&oe=6343C54E" alt="..." />
+                                     <figcaption>
+                                       <h2>I think the <span>surest</span> sign </h2>
+                                        <p>That intelligent life exists elsewhere in the universe is that none of it has tried to contact us.</p>
+                                        <a href="#"></a>
+                                     </figcaption>     
+                                    </figure>
+                            </div>   
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 3-->
+                    <div class="col-md-6 col-lg-4 mb-5 insize">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                <figure class="snip0016">
+                                  <img class="img-fluid  resizee" src="https://lh3.googleusercontent.com/AAuZA_AyQBYy3sUOIjhVyAq9cWCBhhd8wjlh_7Oxzfe9c1OX84PYOLi1Ea-Z8uKjMNHSvallroynAHAYzQSME-8KNLZCJGs5PtRoEwWvZzvzgzxEQR6vyp7ijcOPUTsHUNA8pNp6=s0" alt="..." />
+                                  <figcaption>
+                                    <h2>I think the <span>surest</span> sign </h2>
+                                   <p>That intelligent life exists elsewhere in the universe is that none of it has tried to contact us.</p>
+                                   <a href="#"></a>
+                                 </figcaption>     
+                                </figure>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 4-->
+                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 insize">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                 <figure class="snip0016">
+                                        <img class="img-fluid  resizee" src="https://salt.tikicdn.com/cache/w1200/ts/product/00/f8/b3/8692f9c33200d5b99ed8ac1b2654240e.jpg" alt="..." />
+                                       <figcaption>
+                                         <h2>I think the <span>surest</span> sign </h2>
+                                          <p>That intelligent life exists elsewhere in the universe is that none of it has tried to contact us.</p>
+                                         <a href="#"></a>
+                                      </figcaption>     
+                                      </figure>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 5-->
+                    <div class="col-md-6 col-lg-4 mb-5 mb-md-0 insize">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                  <figure class="snip0016">
+                                 <img class="img-fluid  resizee" src="https://cf.shopee.vn/file/7a9df8e8d5e5c6c9bd010b770ef43649" alt="..." />
+                                 <figcaption>
+                                   <h2>I think the <span>surest</span> sign </h2>
+                                   <p>That intelligent life exists elsewhere in the universe is that none of it has tried to contact us.</p>
+                                   <a href="#"></a>
+                                 </figcaption>     
+                                </figure>
+                            </div>
+                          
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 6-->
+                    <div class="col-md-6 col-lg-4 insize">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                          <figure class="snip0016">
+                                          <img class="img-fluid  resizee" src="https://salt.tikicdn.com/ts/brickv2og/dc/5a/ce/93235925218a59e9eae028c76d9180e7.jpg" alt="..." />
+                                          <figcaption>
+                                            <h2>I think the <span>surest</span> sign </h2>
+                                            <p>That intelligent life exists elsewhere in the universe is that none of it has tried to contact us.</p>
+                                            <a href="#"></a>
+                                         </figcaption>     
+                                        </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              </div>
+        </section>
+<div class = 'centerr nearfooter'>
+ <div class ='margi'> <span class= 'textneww ' >Others </span> </div>
+<div class="card bk size" style="width: 18rem;">
+  <img src="https://nhasachphuongnam.com/images/promo/225/135-icon_01.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Jigsaw Puzzles</p>
+  </div>
+</div>
+<div class="card bk size" style="width: 18rem;">
+  <img src="https://nhasachphuongnam.com/images/promo/227/135-icon_02_2.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text ">Souvenir</p>
+  </div>
+</div>
+<div class="card bk size" style="width: 18rem;">
+  <img src="https://nhasachphuongnam.com/images/promo/225/135-icon_03.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Old Book Market</p>
+  </div>
+</div>
+<div class="card bk size" style="width: 18rem;">
+  <img src="https://nhasachphuongnam.com/images/promo/225/135-icon_05.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Gift</p>
+  </div>
+</div>
+<div class="card bk size" style="width: 18rem;">
+  <img src="https://nhasachphuongnam.com/images/promo/225/135-icon_06.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Lego Toy</p>
+  </div>
+</div>
+</div>
+

@@ -1,0 +1,12 @@
+<% provide(:title,@product.name) %>
+<div class="card center widthcard" style="width: 18rem;">
+  <%= image_tag(@product.image.url, :alt => "rss feed",class: 'img') %>
+  <div class="card-body">
+    <h5 class="card-title">Name :<%=@product.name %> </h5>
+    <h5 class ='card-title'> Author :<%=@product.author %> </h5>
+    <p class="card-text">Description :<%=@product.description %> </p>
+    <h5 class ='card-title'> Quantity :<%=@product.quantity%> </h5>
+    <h5 class ='card-title'> Price :<%=@product.price%> </h5>
+  </div>
+</div>
+

@@ -1,0 +1,9 @@
+<%= form_with(model: @micropost, local: true) do |f| %>
+<div class="field">
+<%= f.text_area :content, placeholder: "Compose new micropost...", class: 'borderradius' %>
+</div>
+<%= f.submit "Post", class: "btn userbut" %>
+<span class="image">
+<%= f.file_field :image %>
+</span>
+<% end %>
