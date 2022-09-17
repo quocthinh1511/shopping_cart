@@ -1,0 +1,12 @@
+<% @orders.each do |order| %>
+<div class="card editcard" style="width: 18rem;">
+  <div class="card-body">
+   <%#= image_tag(order.image.url, :alt => "rss feed",class: 'img') %>
+    <h6 class="card-text"><%= order.@users.name %> </h6>
+   <% if current_user.role ==2  %>
+| <%= button_to "delete", order, method: :delete,
+data: { confirm: "You sure?" } %>
+<% end %>
+  </div>
+</div>
+<% end %>

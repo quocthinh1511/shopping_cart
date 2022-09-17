@@ -17,8 +17,7 @@ module SessionsHelper
     end
 
     def current_shop
-        @user = User.find_by(id: session[:user_id])
-        @user.shop
+        @current_shop = Shop.find_by( $current_shop_id)
     end
 
     def logged_in?
@@ -50,6 +49,10 @@ module SessionsHelper
     def getId(product)
         $current_product_id = @product.id
     end
+    def getId(shop)
+        $current_shop_id = @shop.id
+    end
+
 
     def current_product
         @current_product = Product.find($current_product_id);

@@ -51,4 +51,10 @@ class ShopsController < ApplicationController
         def shop_params
             params.require(:shop).permit(:name, :description, :avatar, :phone ,:tax_code, :avatar)
         end
+        def logged_in_user
+            unless logged_in?
+            flash[:danger] = "Please log in."
+            redirect_to login_url
+            end
+        end 
 end

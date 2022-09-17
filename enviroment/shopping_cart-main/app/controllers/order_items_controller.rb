@@ -1,21 +1,23 @@
 class OrderItemsController < ApplicationController  
 
-  before_action :logged_in_user, only: [:create, :destroy]
+ 
     def create
+      @product = Product.find_by(id: params[:id])
       @order = current_order
       @order_item = @order.order_items.new(order_item_params)
+      session[:order_id] = @order.id
       @order.save
       session[:order_id] = @order.id
         redirect_to root_path
         flash[:success]= 'Your item added!'
-        session[:order_id] = @order.id
      end
   
       def update
         @order = current_order
         @order_item = @order.order_items.find(params[:id])
-        @order_item.update_attributes(order_item_params)
+        @order_item.update(order_item_params)
         @order_items = @order.order_items
+        redirect_to cart_path
       end
     
       def destroy
@@ -23,6 +25,7 @@ class OrderItemsController < ApplicationController
         @order_item = @order.order_items.find(params[:id])
         @order_item.destroy
         @order_items = @order.order_items
+        redirect_to cart_path
       end
 
     private

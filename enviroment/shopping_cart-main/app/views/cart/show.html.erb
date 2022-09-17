@@ -1,16 +1,53 @@
 
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-6">
-        <h1><%= link_to "My Store", root_path %></h1>
-      </div>
-      <div class="col-xs-6 text-right">
-        <h1 class="cart-text"><%= render 'cart_text' %></h1>
-      </div>
-    </div>
-    <hr>
-    <%= yield %>
-  </div>
-  <div class="shopping-cart">
-  <%= render "shopping_cart" %>
-</div>
+  <div class="cardd">
+            <div class="row">
+                <div class="col-md-8 cartt">
+                    <div class="title">
+                        <div class="row">
+                            <div class="col"><h4><b>Shopping Cart</b></h4></div>
+                            <div class="col align-self-center text-right text-muted"><%= "#{current_order.order_items.size} Items" %></div>
+                        </div>
+                    </div>    
+                    <div class="row border-top border-bottom">
+                        <div class="row main align-items-center">
+                           <% @order_items.each do |item| %>
+                                 <h3><%= item.product.name %></h3>
+                                     <%= image_tag(item.product.image.url, :alt => "rss feed",class: 'img') %>
+                                  <h5><%= "#{item.product.price} $ per one"%></h5>
+                                 <%= form_for item, remote: true do |f| %>
+                                      <%= f.hidden_field :product_id, :value => item.product.id %>
+                                      <%= f.number_field :quantity, :value => item.quantity.to_i %>
+                                      <%= f.submit "Update Card", class: 'btn-primary btn'%>
+                                 <% end %>
+                                   <%= button_to "Remove Items", order_item_path(item), method: :delete, remote: true, class: 'btn btn-primary'%>
+                                  <h2>Subtotal: <%= item.total_price %></h2>
+                              <% end %>
+                        </div>
+                    </div>
+            
+                    <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted"> <%= link_to "Back to shop", products_path %></span></div>
+                </div>
+                <div class="col-md-4 summary right">
+                    <div><h5><b>Summary</b></h5></div>
+                    <hr>
+                    <div class="row">
+                        <div class="col" style="padding-left:0;"><%= "#{current_order.order_items.size} Items"  %></div>
+                        <div class="col text-right"><%= "Total: #{number_to_currency current_order.sum}$" %></div>
+                    </div>
+                    <form>
+                        <p>SHIPPING</p>
+                        <select><option class="text-muted">Standard-Delivery- &euro;5.00</option></select>
+                        <p>GIVE CODE</p>
+                        <input id="code" placeholder="Enter your code"> </input>
+                    </form>
+                    <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                        <div class="col">TOTAL PRICE</div>
+                        <div class="col text-right"> <%="#{current_order.sum}$" %> </div>
+                    </div>
+                    <button class="btn ">CHECKOUT</button>
+                    </div>
+            </div>
+                   </div>
+                          </div>
+                                 </div>
+                                        </div>
