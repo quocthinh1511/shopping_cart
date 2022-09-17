@@ -8,7 +8,6 @@ class CategoriesController < ApplicationController
   end
 
 
-
   def create
       @category = Category.new(category_params)
       if @category.save
@@ -18,6 +17,10 @@ class CategoriesController < ApplicationController
       end
   end
 
+  # Only allow a list of trusted parameters through.
+  def category_params
+    params.require(:category).permit(:name)
+  end
 
   private
   # Use callbacks to share common setup or constraints between actions.
