@@ -62,7 +62,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_13_074953) do
     t.bigint "product_id"
     t.bigint "order_id"
     t.integer "quantity"
-    t.integer "total"
+    t.integer "unit_price"
+    t.integer "total_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["order_id"], name: "index_order_items_on_order_id"
@@ -127,7 +128,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_13_074953) do
     t.string "password"
     t.string "phone"
     t.string "address"
-    t.string "avatar"
+    t.string "avatar", default: "https://scr.vn/wp-content/uploads/2020/07/Avatar-Facebook-tr%E1%BA%AFng.jpg"
     t.integer "role", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

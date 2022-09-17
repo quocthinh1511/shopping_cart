@@ -820,3 +820,86 @@ overflow: hidden;
     background-size: 100%!important;
     background-position: center!important;
 }
+.orderquantity{
+    background-color: red;
+    text-decoration: none!important;
+    border-radius: 0.6!important;
+    font-size:20px;
+    margin-bottom: 5px!important;
+}
+
+
+/*Cart*/
+
+
+.card{
+    margin: auto;
+    max-width: 950px;
+    width: 90%;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1rem;
+    border: transparent;
+}
+@media(max-width:767px){
+    .cardd{
+        margin: 3vh auto;
+    }
+}
+.cartt{
+    background-color: #fff;
+    padding: 4vh 5vh;
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem;
+}
+@media(max-width:767px){
+    .cartt{
+        padding: 4vh;
+        border-bottom-left-radius: unset;
+        border-top-right-radius: 1rem;
+    }
+}
+.summary{
+    background-image: url(https://inkythuatso.com/uploads/thumbnails/800/2022/05/1-hinh-nen-dien-thoai-binh-yen-inkythuatso-18-16-16-38.jpg);
+    background-position: center;
+    background-size: 100%;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding: 4vh;
+    color: rgb(65, 65, 65);
+}
+
+.summary .col-2{
+    padding: 0;
+}
+.summary .col-10
+{
+    padding: 0;
+}
+.main{
+    margin: 0;
+    padding: 2vh 0;
+    width: 100%;
+}
+
+
+.close{
+    margin-left: auto;
+    font-size: 0.7rem;
+}
+.back-to-shop{
+    margin-top: 4.5rem;
+}
+
+hr{
+    margin-top: 1.25rem;
+}
+form{
+    padding: 2vh 0;
+}
+
+ #code{
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.253) , rgba(255, 255, 255, 0.185)), url("https://img.icons8.com/small/16/000000/long-arrow-right.png");
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: center;
+}
