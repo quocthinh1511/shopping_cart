@@ -9,12 +9,12 @@
     <h5 class ='card-title'> Quantity Remain :<%=@product.quantity%> </h5>
     <h5 class ='card-title'> Price :<%=@product.price%> </h5>
   </div>
-<%= form_for @order_item do |f| %>
-<%= f.label :quantity%>
-<%= f.hidden_field :product_id, :value => @product.id%>
-<%= f.number_field :quantity, class: 'form-control' %>
-<%= f.submit "Add to cart",class: "btn btn-primary" %>
-<%end%>
+  <%= form_for @order_item, method: :post do |f| %>
+  <%= f.label :quantity %>
+  <%= f.number_field :quantity, class: 'form-control' %>
+  <%= f.hidden_field :product_id, :value => @product.id%>
+  <%= f.submit "Add to cart",class: "btn btn-primary" %>
+  <% end %>
 </div>
 </div>
 

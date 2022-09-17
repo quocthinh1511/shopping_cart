@@ -1,8 +1,8 @@
 class ShopsController < ApplicationController    
-
+    before_action :logged_in_user, only: [:create, :destroy]
     def show 
         @shop = Shop.find_by(id: params[:id])
-        @product= Product.find(params[:id])
+       # @product= Product.find(params[:id])
     end
 
     def new
@@ -42,11 +42,19 @@ class ShopsController < ApplicationController
     end
     
     def destroy
-        
+        Shop.find(params[:id]).destroy
+        flash[:success] = " Shop deleted"
+        redirect_to shops_url
     end
    
     private
         def shop_params
             params.require(:shop).permit(:name, :description, :avatar, :phone ,:tax_code, :avatar)
         end
+        def logged_in_user
+            unless logged_in?
+            flash[:danger] = "Please log in."
+            redirect_to login_url
+            end
+        end 
 end

@@ -1,0 +1,13 @@
+<% Shop.all.each do |shop| %>
+<div class="card editcard" style="width: 18rem;">
+  <div class="card-body">
+   <%#= image_tag(shop.image.url, :alt => "rss feed",class: 'img') %>
+    <h6 class="card-text"><%=shop.name %> </h6>
+     <p class="card-text"><%=shop.description %> </p>
+   <% if current_user.admin? %>
+| <%= button_to "delete", shop, method: :delete,
+data: { confirm: "You sure?" } %>
+<% end %>
+  </div>
+</div>
+<% end %>
