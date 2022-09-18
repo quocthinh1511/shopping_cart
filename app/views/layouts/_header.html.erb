@@ -65,10 +65,10 @@
       <button class= 'btn btn-outline-success' type='submit' >Search </button>
       </form>
       <%= link_to  cart_path(current_order.order_items) do %>
-  <i class="uil uil-shopping-cart-alt cart">
-   <% if logged_in? %><li>
-  <span class='orderquantity'>
-     <%= current_order.order_items.size %>
-     </span>  <% end %></i> 
-    <% end %>
+        <i class="uil uil-shopping-cart-alt cart"> 
+      <% if logged_in? %>
+        <span class='orderquantity'>
+      <%= current_order.order_items.size %>
+        </span>  <% end %> </i> 
+     <% end %>
 </nav>

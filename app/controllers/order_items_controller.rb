@@ -5,7 +5,6 @@ class OrderItemsController < ApplicationController
       @product = Product.find_by(id: params[:id])
       @order = current_order
       @order_item = @order.order_items.new(order_item_params)
-      session[:order_id] = @order.id
       @order.save
       session[:order_id] = @order.id
         redirect_to root_path
@@ -19,7 +18,7 @@ class OrderItemsController < ApplicationController
         @order_items = @order.order_items
         redirect_to cart_path
       end
-    
+
       def destroy
         @order = current_order
         @order_item = @order.order_items.find(params[:id])

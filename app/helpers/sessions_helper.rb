@@ -17,7 +17,8 @@ module SessionsHelper
     end
 
     def current_shop
-        @current_shop = Shop.find_by( $current_shop_id)
+        @user = User.find_by(id: session[:user_id])
+        @user.shop
     end
 
     def logged_in?
@@ -61,11 +62,11 @@ module SessionsHelper
     def current_category 
         @current_category = Category.find(params[:id])
     end
-    #def current_order
-       # if !session[:order_id].nil?
-         #   Order.find(session[:order_id])
-       # else
-        #    Order.new
-      #  end
-   # end
+    def current_order
+        if !session[:order_id].nil?
+         Order.find(session[:order_id])
+        else
+        Order.new
+        end
+    end
 end
