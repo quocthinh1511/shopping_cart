@@ -8,12 +8,12 @@ default: &default
 
 development:
   <<: *default
-  database: tuu_development
+  database: tuuu_development
 
 
 test:
   <<: *default
-  database: tuu_test
+  database: tuuu_test
  # production:
 #adapter: postgresql
 #encoding: unicode

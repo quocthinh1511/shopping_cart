@@ -20,9 +20,9 @@
       <p class ='card-text'> Quantity :<%=product.quantity%> </p>
     <p class="card-text">Price :<%=product.price%></p>
     <p class="card-text">Genres :<%=@category.find_by(id: product.category_id).name%></p>
-    <p class="card-text">Shop: <%=@shop.find_by(id: product.shop_id).name %> </p>
-     <% if product.shop_id == current_shop.id %>
-           <%= link_to "View your own product", shoppage_path ,class: "btn btn-primary" %>
+    <p class="card-text">Shop: <%=@shops.find_by(id: product.shop_id).name %> </p>
+     <% if current_user.role == 2 && product.shop_id == current_shop.id %>
+           <%= link_to "Your product", shoppage_path ,class: "btn btn-primary" %>
       <%else%>
     <% if product.quantity > 0 %>
         <%= link_to "View", showtocart_path(product),class: "btn btn-primary" %>

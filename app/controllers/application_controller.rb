@@ -5,15 +5,9 @@ class ApplicationController < ActionController::Base
     def hello
         render html: "hello, world!"
     end
+ 
     include SessionsHelper
-    private 
-    def current_order
-        if !session[:order_id].nil?
-          Order.find(session[:order_id])
-        else
-          Order.new
-        end
-      end
+   
     #def initialize_session 
        # session[:cart]||= []
    # end
